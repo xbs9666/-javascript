@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//     var num = prompt("请输入一个0-59的数字");
+//     var newNum = num < 10 && num.length < 2 ? 0 + num : num;
+//    alert(newNum);
+   var num = prompt("请输入一个0-59的数字");
+   if(num>0 && num<= 59){
+       if(num>0 && num < 10 && num.length < 2){
+           alert("0" + num);
+       }else{
+       alert(num);
+   }
+   }else{
+       alert("请输入符合的数字");
+   }
+</script>
+</html>
