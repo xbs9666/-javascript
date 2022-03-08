@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1.找出1~1000之中，所有能被5整除，或者被6整除的数字。在控制台输出。提示:i % 5 == 0 || i % 6 == 0)
+    // for(var i = 1;i <= 1000; i++){
+    //     if(i % 5 == 0 || i % 6 == 0){
+    //         console.log(i);
+    //     }    
+    // }
+
+    //2.报7游戏的安全数，输出1-60之间所有的安全数。提示:不能被7整除并且末尾不能是7
+    
+    for(var i = 1 ; i <60;i++){
+        if(i % 7 == 0 && i % 10 !== 7){//能被7整除且尾数不带7的
+            console.log(i);
+        }
+        // else{
+        //     continue
+        // }
+    } 
+   
+  
+</script>
+</html>
