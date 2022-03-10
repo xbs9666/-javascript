@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //  求arr中的最大值
+    //首先要有一个值Max来和数组中的元素进行对比 ，默认max为数组中第一个元素 
+    // 遍历每个数值和max进行对比
+    //如果遍历到的数值比max大
+    //则数值替换max，否则进行下一轮比较
+    //最后输出max
+
+// 其实不是很难，思路和求1-100以内的合，需要找到一个容器来储存
+    var arr = [2,6,1,77,52,25,7];
+    var max = arr[0];
+    for(var i = 0; i<= arr.length; i++){
+        // if(arr[0]< max){    //错误应该是数组中的某一个数值大于max
+        if(arr[i]> max){
+            max = arr[i];
+        }
+        
+    }
+    console.log(max);
+
+
+    //求最小值
+    // var arr = [2,6,1,77,52,25,7];
+    // var max = arr[0];
+    // for(var i = 0; i<= arr.length; i++){
+    //     // if(arr[0]< max){    //错误应该是数组中的某一个数值大于max
+    //     if(arr[i]> max){
+    //         max ;
+    //     }
+        
+    // }
+    // console.log(max);
+</script>
+</html>

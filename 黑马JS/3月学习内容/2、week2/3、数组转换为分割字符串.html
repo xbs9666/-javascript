@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //用'|'分割字符串
+
+    var arr = ['red','green','blue','pink'];
+    var num = ''
+    var sep = '|'
+    for(var i = 0;i<arr.length;i++){
+        //优化前
+       // num = num +arr[i]+ '|'; // 如果是要求其他符号，可再添加一个变量 sep ,将分隔符赋值给sep
+       //优化后
+       num = num + arr[i] + sep;
+    }
+    console.log(num);
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 现在有一个数组 arr[2,0,1,77,0,52,0,25,7]
+    // 创建一个空数组  
+    //将数组中大于10的挑选出来    遍历数组arr
+    //将 大于10 的元素  赋值给空数组
+
+
+    //  自己写的  最后arr1里有9个 元素，只是把小于10的剔除了，大于10的还存在，不符合要求
+    // var arr = [2,0,6,1,77,0,52,0,25,7];
+    // var arr1 = [];
+    // for(var i= 0; i<arr.length; i++){
+    //     if(arr[i] > 10){
+    //         arr1[i] = arr[i];
+    //     }
+    // }
+    // console.log(arr1);
+
+    //写法1
+    // var arr = [2,0,6,1,77,0,52,0,25,7];
+    // var arr1 = [];
+    // var j = 0;      //j是arr1的下标，每次自增 决
+    // for(var i= 0; i<arr.length; i++){
+    //     if(arr[i] > 10){
+    //         arr1[j] = arr[i];
+    //         j++;
+    //     }
+    // }
+    // console.log(arr1);
+
+    //写法2
+    // var arr = [2,0,6,1,77,0,52,0,25,7];
+    // var arr1 = []; //arr1.length的长度为0
+    // for(var i= 0; i<arr.length; i++){
+    //     if(arr[i] > 10){
+    //         arr1[arr1.length] = arr[i];
+
+    //     }
+    // }
+    // console.log(arr1);
+
+    //1.要求将数组中带有0的去掉，形成一个新数组 
+    //arr[2,0,6,1,77,0,52,0,25,7]
+    //遍历数组
+    //如果元素不等于0，将元素取出 放在空数组arr1中
+    var arr = [2,0,6,1,77,0,52,0,25,7];
+    var arr1 = [];
+    for(var i = 0;i < arr.length;i++){
+        if( arr[i] != 0){
+            arr1[arr1.length] =arr[i];
+        }
+    }
+    console.log(arr1);
+</script>
+</html>
