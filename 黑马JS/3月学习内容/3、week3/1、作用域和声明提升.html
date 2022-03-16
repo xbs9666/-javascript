@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function f1() {
+        var num = 123;
+        function f2() {
+            var num = 0;
+            console.log(num); // 0,一层一层往外找num，内部有就输出内部num的值
+        }
+        f2();
+    }
+    var num = 456;
+    f1();
+
+    var a = 1;
+
+    function fn1() {
+        var a = 2;
+        var b = "22";
+        fn2();
+        function fn2() {
+            var a = 3;
+            fn3();
+            function fn3() {
+                var a = 4;
+                console.log(a);//4
+                console.log(b);//"22"
+
+            }
+        }
+    }
+    fn1();
+
+
+
+
+    var boy = 20,
+        girl = 18,
+        marry = 22;
+    function love(marry) {//指定形参自动声明了var  局部变量
+        boy = 24;		//没有声明在非严格模式下是  全局变量		外层可访问且boy的赋值被更改为24
+        var girl = 22;//局部变量  外层访问不到
+        marry = 25;//局部变量
+        console.log(marry);
+    }
+    love(22);
+    console.log(boy, girl, maryy);//24 18 22
+
+
+
+
+
+    var a = 18;
+    f1();
+    function f1() {
+        var b = 9;
+        console.log(b)//9
+    }
+
+
+
+
+    var num = 10;
+    fun();
+    function fun() {
+        console.log(num);//undefined
+        var num = 20;
+        console.log(num); //20
+    }
+
+
+    var a = 18;
+    f1();
+    function f1() {
+        var b = 9;
+        console.log(a);//undefined
+        console.log(b);//9
+        var a = '123';
+    }
+    相当于
+    function f1() {
+        var b;
+        var a;
+        b = 9; //赋值不会提升
+        console.log(a);
+        console.log(b);
+        a = '123';
+    }
+
+
+
+    f1();
+    console.log(c);//9
+    console.log(b);//9
+    console.log(a);//报错
+
+    function f1() {
+        var a = b = c = 9;
+        console.log(a); //9
+        console.log(b);	//9
+        console.log(c);	//9
+    }
+
+    相当于
+
+    f1();
+    console.log(c);//9
+    console.log(b);//9
+    console.log(a);//报错  不能获取局部变量且全局变量中没有声明C，所以报错
+
+    function f1() {
+        var a = 9; //局部变量
+        b = 9;	//全局变量
+        c = 9;	//全局变量
+        console.log(a); //9
+        console.log(b);	//9
+        console.log(c);	//9
+    }
+
+
+</script>
+
+</html>

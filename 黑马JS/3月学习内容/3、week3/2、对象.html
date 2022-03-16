@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // var user = {
+    //     name: '张三',
+    //     age: 26,
+    //     sex: '男'
+    // } ;
+    // for(var key in user){
+    //     console.log(user[key]);//获取user中的值
+    //     console.log(key);   //获取 user中的属性名
+    // }
+
+    // 1. 依次获取该对象的所有属性值
+    // 2. 依次修改该对象的属性
+    var temp = {
+        className: "danger text",
+        tagName: "DIV",
+        style: {
+            color: "red",
+            width: "200px",
+            height: "100px"
+        },
+        innerText: "不凡学院",
+        onclick: function () { alert('hi') },
+        onfocus: null,
+        onmouseover: null,
+        title: "hello",     
+    }
+    for( key in temp){
+        console.log(temp[key]);
+    }
+    
+</script>
+
+</html>
