@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+}
+var res = getRandomInt(1, 10);
+while(true){
+    var random = prompt('请输入一个1-10之间的数字');
+    if(random > res){
+        alert('数字大了');
+    }else if(random < res){
+        alert('数字小了');
+    }else{
+        alert('猜对了');
+        break;
+    }
+
+}
+</script>
+</html>
