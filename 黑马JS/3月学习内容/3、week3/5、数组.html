@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 1.翻转数组 新方法
+//     var arr = [1,2,3,4,5,6];
+//     arr.reverse();
+//     console.log(arr);
+// for循环老方法翻转数组
+// var arr = [1,2,3,4,5,6];
+// var arr1 = [];
+// for(var i =  arr.length-1;i >=0; i--){
+//     arr1[arr1.length] = arr[i];
+// }
+// console.log(arr1);
+
+//2.sort() 排序
+// var arr = [1,2,7,13,2,6,77,8]
+// arr.sort();//可以对字符串进行转换
+// console.log(arr);  //[1, 13, 2, 6, 7, 77, 8]
+// arr.sort(function(a,b){
+//     return a-b //升序
+//     // return b-a //  降序
+// })
+// console.log(arr);
+
+// var arr = ['L','K','C','H','G','F','B','A']
+// arr.sort()
+// console.log(arr);
+
+//3.push在数组末端添加元素：
+// var arr = [1,2,3,4];
+// arr.push(5,6,7);
+// console.log(arr);//[1,2,3,4,5,6,7]
+// console.log(arr.push());//7 返回数组长度
+
+//4.unshift() 在数组开端添加元素
+// var arr = [1,2,3,4];
+// arr.unshift(0);
+// console.log(arr);//[0,1,2,3,4]
+// console.log(arr.unshift());//5 返回数组长度
+
+//5.pop在数组末端删除元素：
+// var arr = [0,1,2,3,4];
+// arr.pop();
+// console.log(arr);//0,1,2,3
+// console.log(arr.pop());//3 返回最后一个元素
+
+//6.shift() 在数组首端删除元素：
+// var arr = [0,1,2,3,4];
+// arr.shift();
+// console.log(arr);//[1,2,3,4]
+// console.log(arr.shift());//1 返回第一个元素
+
+//7.reverse() 翻转数组
+// var arr = [1,2,3,4,5,6];
+//     arr.reverse();
+//     console.log(arr);//[6,5,4,3,2,1]
+
+// //使用for循环
+// var arr = [1,2,3,4,5,6];//声明数组
+// var arr1 = [];					//创建一个空数组
+// for(var i =  arr.length-1;i >=0; i--){ //从原数组最后一个开始，依次往新数组中添加，
+//     arr1[arr1.length] = arr[i];
+// }
+// console.log(arr1);
+
+//8.indexof() 数组中查找指定元素的第一个索引 
+var arr = [1,2,3,4];
+console.log(arr.indexOf(1));//0
+// 若查找元素不存在则返回-1
+var arr = [1,2,3,4];
+console.log(arr.indexOf(5));//-1
+
+
+//9.lastIndexOf() 可返回一个指定的字符串值最后出现的位置在一个字符串中的指定位置从后向前搜索。
+var arr = [1,2,3,4];
+console.log(arr.lastIndexOf(4));//0
+// 若查找元素不存在则返回-1
+var arr = [1,2,3,4];
+console.log(arr.lastIndexOf(5));//-1
+
+// 根据indexof()查找元素不存在返回-1的特性，可用于数组查重
+//创建一个新数组arr1
+//将原数组arr中的元素放入新数组arr中，如果新数组没有就继续放，==-1，如果有就不放
+var arr = [1,1,2,2,3,4,5,5,6];
+var arr1 = [];
+for(var i = 0; i < arr.length ; i++){
+    if(arr1.indexOf(arr[i]) == -1){
+        arr1.push(arr[i]);
+    }
+}
+console.log(arr1);
+
+</script>
+</html>
