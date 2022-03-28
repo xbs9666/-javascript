@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+      //统计字符串  'abcoefoxyozzopp'中出现最多的字符以及次数  charAt()  对象.[元素]
+      //核心算法：利用charAt()遍历字符串
+      //把每个字符储存给对象，如果对象没有该属性，就为1.存在了就+1
+      //遍历对象，得到最大值和该字符
+
+    //   var str = 'abcoefoxyozzopp';
+    //   var o = {};
+    //   for(var i = 0; i< str.length; i++){
+    //       var chars = str.charAt(i); //查询某个对象
+    //       if(o[chars]){ //如果有这个对象
+    //             o[chars]++      //次数+1
+    //       }else{
+    //         o[chars] = 1;  //如果没有,就存进去
+    //       }
+    //   }
+    //   console.log(o);
+    
+    // var a ='aabcde'
+    // console.log(a.charAt(3));
+
+
+    var str = 'abcoefoxyozzopp';
+      var o = {};
+      var max = 0;
+      var ch = ''
+      for(var k in o){
+        if(o[k] > max){
+            max = o[k]  //出现最多值的次数
+            ch = k; //出现最多的属性名
+        }
+      }
+      console.log(max);
+      console.log();
+
+
+</script>
+</html>
