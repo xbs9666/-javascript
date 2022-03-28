@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">nav</div>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <ul>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <div class ="box">盒子1</div>
+    <div class = "box">盒子2</div>
+</body>
+<script>
+    //1.通过id属性获取元素
+    // var div =document.getElementById('box')
+    // console.log(div);
+
+    //2.通过标签名获取元素  getElementBtTagName()  能够获取到所有的标签
+    //以伪数组的形式保存
+    // var lis = document.getElementsByTagName('li');
+    // console.log(lis);
+
+    //如果要换取到某个元素下的li，需要先找到这个元素，必须精准找到  element.getElementsBtTagName('标签名')   
+    // var ol = document.getElementsByTagName('ol');
+    //console.log(ol.getElementsByTagName('li')); 因为ol的定位不够准确，所以显示错误
+    //  console.log(ol[0].getElementsByTagName('li'));
+    //如果页面中没有这个元素，返回的是空的伪数组
+    //  console.log(document.getElementsByName('p'));
+
+    //3.1根据类名获取元素  H5新增  document.getElementByClassName('类名')
+    // var boxs = document.getElementsByClassName('box');
+    // var boxs = document.getElementsByClassName('box');
+    // console.log(boxs);
+    //3.2 querySelector()返回指定选择器的第一个元素对象，选择器需要加符号，类:.box ID:#box
+    // var firstbox = document.querySelector('.box');
+    // console.log(firstbox);
+    // var nav = document.querySelector('#box');
+    // console.log(nav);
+    // var li  = document.querySelector('li');
+    // console.log(li);
+    //3.3  querySelectorAll()返回指定选择器的所有元素对象集合
+    var boxs = document.querySelectorAll('.box');
+    console.log(boxs);
+    var ele = document.querySelectorAll('ul li'); //也可以使用css选择器
+    console.log(ele);
+
+ </script>
+</html>
