@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1.replace(替换对象，新字符)
+    var a = '2,1,2,3,2,4';
+    console.log(a.replace('2','+'));
+    //将字符串中所有为2的替换为+
+    while(a.indexOf('2') !== -1){ //如果有2
+        a = a.replace('2','+')  //把所有2替换为+号
+    }
+    console.log(a);
+
+    //2.split('分隔符')  将字符串转换为数组   与之相对应的是join
+    var a = '2,1,2,3,2,4';
+    console.log(a.split(','));//['2','1','2','3','2','4']
+</script>
+</html>
