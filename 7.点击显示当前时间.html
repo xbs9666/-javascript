@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>显示当前时间</button>
+    <div>某个时间</div>
+</body>
+<script>
+        //1.获取事件源
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        //注册事件
+        btn.onclick = function(){
+            var date = new Date();
+            var h = date.getHours();
+            if(h < 12 || h>6 ){
+                div.innerHTML = '上午好' + getDate();
+            }else if(h < 18 || h <=24 ){
+                div.innerHTML = '下午好' + getDate();
+            }else if(h>0 ||h < 6){
+                div.innerHTML = '晚上好' + getDate();
+            }
+            
+        }
+        function getDate(){
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth();
+                var dates = date.getDate();
+                var arr = ['周日','周一','周二','周三','周四','周五','周六'];
+                var day = date.getDay();
+                return  '现在是：' + year + '年' + month + '月' + dates + '日' + arr[day];
+        }
+</script>
+</html>
