@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .box {
+          width: 200px;
+          height: 200px;
+          color: #333;
+      }
+      .active{
+          color: red;
+          background-color: pink;
+      }
+    </style>
+</head>
+<body>
+    <div class="box">哈哈哈哈</div>
+</body>
+<script>
+    //1.获取元素
+    const box = document.querySelector("div");
+    //2.修改元素
+    //2.1 追加元素   add('类名')
+    // box.classList.add() = "active"  错误写法
+    box.classList.add('active');
+    //2.2 删除元素  remove('类名')
+    box.classList.remove('active');
+    //2.3 切换元素，有就删除，没有就添加  toggle('类名')
+    box.classList.toggle('active')
+
+    // className和classList都可以通过类名修改
+    //大量样式修改用classList，className会覆盖原来的样式（类名），
+    //classList中的追加，删除不影响以前的类名
+    //注意className和classList的使用方法
+</script>
+</html>
