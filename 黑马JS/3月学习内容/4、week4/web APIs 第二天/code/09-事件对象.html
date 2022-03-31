@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" value="">
+</body>
+<script>
+    //1.事件对象常见属性
+    const input = document.querySelector('input');
+    //function(e){}中有形参，可以通过形参.key来监听用户输入的按键
+    input.addEventListener('keyup', function (e){
+            // console.log(e.key);
+            if(e.key === 'Enter'){
+                console.log('hhhh');
+            }
+
+    })
+</script>
+</html>

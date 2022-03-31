@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        // LV1版本  事件源.on事件类型
+        const btn = document.querySelector('button');
+        // btn.onclick = function(){
+        //     alert('11')
+        // }
+        // btn.onclick = function(){
+        //     alert('22')
+        // }
+        //若多次监听，会覆盖之前的事件处理程序
+        //相当于  
+        // const num = 1;
+        //  num=10;
+        //  console.log(num);//10
+        // 可以把  事件源.on事件类型 = function(){} 看成一个复制，第二次会覆盖第一次
+
+
+        //LV2版本 事件源.addEventListener
+        btn.addEventListener('click',function(){
+            alert('11');
+        })
+        btn.addEventListener('click',function(){
+            alert('22');
+        })
+        //能够监听多个事件，不会被覆盖
+    </script>
+</body>
+
+</html>

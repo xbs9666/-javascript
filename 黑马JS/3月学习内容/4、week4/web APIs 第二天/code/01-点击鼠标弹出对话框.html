@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+</body>
+<script>
+    //世界监听三要素
+    //1.事件源   谁
+    //2.事件类型    怎么样
+    //3.事件处理程序  干了什么事儿
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', function(){
+        alert('你好呀')
+    })
+    //注意 addEventListener的用法   addEventListener('事件类型'，函数)
+</script>
+</html>

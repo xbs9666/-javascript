@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        const arr = ['马超', '黄忠', '赵云', '关羽', '张飞'];
+        //获取到姓名
+        const name = document.querySelector('.box .qs');
+        //获取到开始按钮
+        const str = document.querySelector('.btns .start');
+        //设置定时器
+        let timeId = 0;
+        //随机要全局
+        let random = 0;
+        //点击一次开始，就随机  滚动出现一个名字 将姓名填到  文本中
+        str.addEventListener('click',function(){
+            timeId = setInterval(function(){
+                 //获取到arr的随机下标  0-4
+                random = Math.floor(Math.random() * arr.length)
+                name.innerHTML = arr[random];
+            },10);
+            //如果数组里只有一个值，不许要再抽取，将str和end禁用  disabled = true
+            if(arr.length ==1){
+                str.disabled = 'true'
+                end.disabled = 'true'
+            }
+        })
+        //点击关闭  定时器关闭，且将随机出现的名字在原来数组中移除
+        const end = document.querySelector('.btns .end');
+        console.log(end);
+        end.addEventListener('click', function(){
+            clearInterval(timeId)
+            arr.splice(arr[random],1);
+            console.log(arr)
+        });
+    </script>
+</body>
+
+</html>
