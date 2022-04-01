@@ -142,9 +142,16 @@
   const p = document.querySelector('.text')
   text.addEventListener('keyup', function(e){
     if(e.key === 'Enter'){
-      box.style.display = 'block'
-     p.innerHTML = text.value
+      if(text.value.trim() !== ''){
+        box.style.display = 'block'
+      //替换用户内容 
+     p.innerHTML = text.value//p标签只有innerHTML，没有Value
+     //输入完毕，清空文本框
+      }  
+    text.value = '' 
+    total.innerHTML = '0/200字'
     }
+
   })
   </script>
 </html>
