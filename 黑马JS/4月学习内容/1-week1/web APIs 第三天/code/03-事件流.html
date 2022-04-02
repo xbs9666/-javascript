@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    
+    <script>
+        //事件流分为事件捕获和事件冒泡 
+        //1. 事件捕获  从大到小 山东 -> 济南 -> 蓝翔   
+        //2. 事件冒泡  从小到大  蓝翔 -> 济南 -> 山东
+        const fa = document.querySelector('.father');
+        const son = document.querySelector('.son');
+        document.addEventListener('click', function(){
+            alert('我是爷爷')
+        })
+        fa.addEventListener('click', function(){
+            alert('我是爸爸')
+        })
+        son.addEventListener('click', function(){
+            alert('我是儿子')
+        })
+    </script>
+     
+    
+</body>
+</html>
