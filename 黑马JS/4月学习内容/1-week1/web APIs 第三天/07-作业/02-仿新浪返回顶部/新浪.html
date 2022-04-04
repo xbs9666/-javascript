@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            width: 1000px;
+            height: 3000px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .backtop {
+            display: none;
+            width: 50px;
+            left: 50%;
+            margin: 0 0 0 505px;
+            position: fixed;
+            bottom: 60px;
+            z-index: 100;
+        }
+
+        .backtop a {
+            height: 50px;
+            width: 50px;
+            background: url(./images/bg2.png) 0 -600px no-repeat;
+            opacity: 0.35;
+            overflow: hidden;
+            display: block;
+            text-indent: -999em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+    <div class="backtop">
+        <img src="./images/close2.png" alt="">
+        <a href="javascript:;"></a>
+    </div>
+    <script>
+        //1. 需求，点击可返回顶部
+        //页面滚动500显示电梯
+
+        //2. 获取元素
+        const backtop = document.querySelector('.backtop') 
+        //2.1 监听窗口滚动
+        window.addEventListener('scroll',function(){
+            //3. 先获得html的滚动距离
+            let n = document.documentElement.scrollTop
+            //3.2 然后根据滚动距离判断电梯显示和隐藏
+            if(n >= 500){
+                backtop.style.display = 'block';
+            }else{
+                backtop.style.display = 'none';
+            }
+
+            //3. 点击返回顶部，将html的滚动距离改为0，
+            //scrollTop 滚动距离  
+            //offsetTop 距离顶部的距离
+            //3.1 监听 a
+            backtop.children[1].addEventListener('click', function(){
+                document.documentElement.scrollTop= 0
+            })
+        })
+    </script>
+</body>
+
+</html>

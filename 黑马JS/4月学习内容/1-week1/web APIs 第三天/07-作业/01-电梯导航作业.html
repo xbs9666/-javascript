@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        .aside {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+        }
+
+        .item {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content {
+            width: 660px;
+            margin: 400px auto;
+        }
+
+        .neirong {
+            height: 300px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content1 {
+            background-color: red;
+        }
+
+        .content2 {
+            background-color: blue;
+        }
+
+        .content3 {
+            background-color: orange;
+        }
+
+        .content4 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="aside">
+        <div class="item active">男装/女装</div>
+        <div class="item">儿童服装/游乐园</div>
+        <div class="item">电子产品</div>
+        <div class="item">电影/美食</div>
+    </div>
+
+    <div class="content">
+        <div class="neirong content1">男装/女装</div>
+        <div class="neirong content2">儿童服装/游乐园</div>
+        <div class="neirong content3">电子产品</div>
+        <div class="neirong content4">电影/美食</div>
+    </div>
+
+    <script>
+       (function(){
+        const content1 = document.querySelector('.content1')
+        const content2 = document.querySelector('.content2')
+        const content3 = document.querySelector('.content3')
+        const content4 = document.querySelector('.content4')
+        const n = document.documentElement.scrollTop;
+        const items = document.querySelectorAll('.aside .item');
+        const neirongs = document.querySelectorAll('.neirong')
+        const aside = document.querySelector('.aside')
+            //获取小盒子
+            window.addEventListener('scroll',function(){
+              const n =  document.documentElement.scrollTop 
+              if( n >= content1 .offsetTop){
+                aside.style.display = 'block'
+              }else{
+                aside.style.display = 'none'
+              }
+              for(let i = 0; i < items.length; i++){
+            //监听点击对象，
+            items[i].addEventListener('click', function(){
+                  //移除当前类名
+                document.querySelector('.aside .active').classList.remove('active')
+                 //点击到谁，给谁添加类名
+                this.classList.add('active')
+                // 获取相应大盒子的高度，并赋值给小盒子
+                document.documentElement.scrollTop = neirongs[i].offsetTop
+            })
+        }
+    })
+
+       })();
+               
+        
+        
+        
+        //先移除类名
+        //判断document.documentElement.scrollTop的值，在不在大盒子offsetTop的范围
+        //如果在，就添加类名    
+       (function(){
+           
+        //获取到每个大盒子
+        const content1 = document.querySelector('.content1')
+        const content2 = document.querySelector('.content2')
+        const content3 = document.querySelector('.content3')
+        const content4 = document.querySelector('.content4')
+        const items = document.querySelectorAll('.aside .item')
+        //监听窗口滚动
+        window.addEventListener('scroll', function(e){
+            //移除类  有就移除，没有就为null
+            const n = document.querySelector('.aside .active');
+            if(n){
+                n.classList.remove('active')
+            }
+            const h = document.documentElement.scrollTop;
+            for(let i = 0; i < items.length; i++){
+            if(h >= content1.offsetTop && h < content2.offsetTop){
+               items[0].classList.add('active')
+            }else if(h >= content2.offsetTop && h < content3.offsetTop) {
+                items[1].classList.add('active')
+            }else if(h >= content3.offsetTop && h < content4.offsetTop){
+                items[2].classList.add('active')
+            }else if( h >= content4.offsetTop){
+                items[3].classList.add('active')
+            }
+            }
+            
+        })
+       })();
+
+      
+        
+
+    </script>
+</body>
+
+</html>
